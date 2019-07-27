@@ -52,9 +52,32 @@ namespace Online_game_store.Controllers
             }
         }
 
-        //
-        // GET: /Account/Login
-        [AllowAnonymous]
+		[HttpGet]
+		public ActionResult AddUserToRole()
+		{
+			var model = new AddToRoleModel();
+			model.roles.Add("Admin");
+			model.roles.Add("User");
+			return View(model);
+		}
+		[HttpPost]
+		public ActionResult AddUserToRole(AddToRoleModel model)
+		{
+			try
+			{
+				var user = UserManager.FindByEmail(model.Email);
+				UserManager.AddToRole(user.Id, "User");
+			}
+			catch (Exception ex)
+			{
+				return HttpNotFound();
+			}
+			return RedirectToAction("Index", "Home");
+		}
+
+		//
+		// GET: /Account/Login
+		[AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;

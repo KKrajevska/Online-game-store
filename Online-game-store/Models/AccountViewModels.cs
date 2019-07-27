@@ -48,7 +48,8 @@ namespace Online_game_store.Models
 
     public class LoginViewModel
     {
-        [Required]
+
+		[Required]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
@@ -64,7 +65,8 @@ namespace Online_game_store.Models
 
     public class RegisterViewModel
     {
-        [Required]
+		
+		[Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

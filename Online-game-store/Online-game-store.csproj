@@ -178,13 +178,18 @@
     <Compile Include="Migrations\201907211008042_InitialModel.Designer.cs">
       <DependentUpon>201907211008042_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907271241421_User Added.cs" />
+    <Compile Include="Migrations\201907271241421_User Added.Designer.cs">
+      <DependentUpon>201907271241421_User Added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AddToCart.cs" />
+    <Compile Include="Models\AddToRoleModel.cs" />
     <Compile Include="Models\BuyGame.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -271,6 +276,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201907211008042_InitialModel.resx">
       <DependentUpon>201907211008042_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907271241421_User Added.resx">
+      <DependentUpon>201907271241421_User Added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

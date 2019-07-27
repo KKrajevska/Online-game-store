@@ -210,3 +210,4 @@ E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online-game-store.dll
 E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online-game-store.pdb
 E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online_game_store.Migrations.InitialModel.resources
 E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online-game-store.csproj.GenerateResource.cache
+E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online_game_store.Migrations.UserAdded.resources
