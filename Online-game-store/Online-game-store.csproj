@@ -168,9 +168,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BuyersController.cs" />
     <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ShoppingCartsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -178,20 +180,34 @@
     <Compile Include="Migrations\201907211008042_InitialModel.Designer.cs">
       <DependentUpon>201907211008042_InitialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907271241421_User Added.cs" />
-    <Compile Include="Migrations\201907271241421_User Added.Designer.cs">
-      <DependentUpon>201907271241421_User Added.cs</DependentUpon>
+    <Compile Include="Migrations\201907271417398_Custom user.cs" />
+    <Compile Include="Migrations\201907271417398_Custom user.Designer.cs">
+      <DependentUpon>201907271417398_Custom user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907271506137_Buyers added.cs" />
+    <Compile Include="Migrations\201907271506137_Buyers added.Designer.cs">
+      <DependentUpon>201907271506137_Buyers added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907271659085_ShoppingCartItems added.cs" />
+    <Compile Include="Migrations\201907271659085_ShoppingCartItems added.Designer.cs">
+      <DependentUpon>201907271659085_ShoppingCartItems added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907271751273_Shopping Cart migration.cs" />
+    <Compile Include="Migrations\201907271751273_Shopping Cart migration.Designer.cs">
+      <DependentUpon>201907271751273_Shopping Cart migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AddToCart.cs" />
     <Compile Include="Models\AddToRoleModel.cs" />
-    <Compile Include="Models\BuyGame.cs" />
+    <Compile Include="Models\Buyer.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -256,6 +272,16 @@
     <Content Include="Views\Games\Details.cshtml" />
     <Content Include="Views\Games\Edit.cshtml" />
     <Content Include="Views\Games\Index.cshtml" />
+    <Content Include="Views\Buyers\Create.cshtml" />
+    <Content Include="Views\Buyers\Delete.cshtml" />
+    <Content Include="Views\Buyers\Details.cshtml" />
+    <Content Include="Views\Buyers\Edit.cshtml" />
+    <Content Include="Views\Buyers\Index.cshtml" />
+    <Content Include="Views\ShoppingCarts\Create.cshtml" />
+    <Content Include="Views\ShoppingCarts\Delete.cshtml" />
+    <Content Include="Views\ShoppingCarts\Details.cshtml" />
+    <Content Include="Views\ShoppingCarts\Edit.cshtml" />
+    <Content Include="Views\ShoppingCarts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -277,8 +303,17 @@
     <EmbeddedResource Include="Migrations\201907211008042_InitialModel.resx">
       <DependentUpon>201907211008042_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907271241421_User Added.resx">
-      <DependentUpon>201907271241421_User Added.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907271417398_Custom user.resx">
+      <DependentUpon>201907271417398_Custom user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907271506137_Buyers added.resx">
+      <DependentUpon>201907271506137_Buyers added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907271659085_ShoppingCartItems added.resx">
+      <DependentUpon>201907271659085_ShoppingCartItems added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907271751273_Shopping Cart migration.resx">
+      <DependentUpon>201907271751273_Shopping Cart migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

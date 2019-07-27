@@ -64,8 +64,7 @@ namespace Online_game_store.Models
     }
 
     public class RegisterViewModel
-    {
-		
+    {		
 		[Required]
         [EmailAddress]
         [Display(Name = "Email")]
