@@ -8,12 +8,12 @@ namespace Online_game_store.Models
 {
 	public class Game
 	{
-		public int Id { get; set; }
+		public int GameId { get; set; }
 		[Required]
 		public string Name { get; set; }
 		[Display(Name = "Release Date")]
 		public string ReleaseDate { get; set; }
-		public string Price { get; set; }
+		public decimal Price { get; set; }
 		public float Rating { get; set; }
 		public string Desctiption { get; set; }
 		public string Manufacturer { get; set; }

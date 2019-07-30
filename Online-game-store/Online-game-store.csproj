@@ -196,6 +196,18 @@
     <Compile Include="Migrations\201907271751273_Shopping Cart migration.Designer.cs">
       <DependentUpon>201907271751273_Shopping Cart migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907302114504_Update database.cs" />
+    <Compile Include="Migrations\201907302114504_Update database.Designer.cs">
+      <DependentUpon>201907302114504_Update database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907302231358_new_update.cs" />
+    <Compile Include="Migrations\201907302231358_new_update.Designer.cs">
+      <DependentUpon>201907302231358_new_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907302241172_remove shopping cart.cs" />
+    <Compile Include="Migrations\201907302241172_remove shopping cart.Designer.cs">
+      <DependentUpon>201907302241172_remove shopping cart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddToRoleModel.cs" />
@@ -314,6 +326,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907271751273_Shopping Cart migration.resx">
       <DependentUpon>201907271751273_Shopping Cart migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907302114504_Update database.resx">
+      <DependentUpon>201907302114504_Update database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907302231358_new_update.resx">
+      <DependentUpon>201907302231358_new_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907302241172_remove shopping cart.resx">
+      <DependentUpon>201907302241172_remove shopping cart.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

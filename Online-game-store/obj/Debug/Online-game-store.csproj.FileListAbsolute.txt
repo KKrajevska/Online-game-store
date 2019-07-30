@@ -214,3 +214,6 @@ E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online_game_store.Migr
 E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online_game_store.Migrations.Buyersadded.resources
 E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online_game_store.Migrations.ShoppingCartItemsadded.resources
 E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online_game_store.Migrations.ShoppingCartmigration.resources
+E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online_game_store.Migrations.Updatedatabase.resources
+E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online_game_store.Migrations.new_update.resources
+E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online_game_store.Migrations.removeshoppingcart.resources

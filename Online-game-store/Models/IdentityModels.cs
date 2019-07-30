@@ -36,6 +36,5 @@ namespace Online_game_store.Models
             return new ApplicationDbContext();
         }
 
-		public System.Data.Entity.DbSet<Online_game_store.Models.ShoppingCart> ShoppingCarts { get; set; }
 	}
 }

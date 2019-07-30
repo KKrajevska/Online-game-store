@@ -6,3 +6,27 @@
 }
 
 <h1>Work in progress</h1>
+
+<div>
+	<h2>Your shopping cart</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Game</th>
+				<th>Pieces</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model.ShoppingCartItems)
+			{
+				<tr>
+					<td>@item.game.Name</td>
+					<td>@item.Ammount</td>
+					<td>@((item.Ammount * item.game.Price).ToString("c"))</td>
+
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

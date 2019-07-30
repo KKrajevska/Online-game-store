@@ -15,24 +15,23 @@ namespace Online_game_store.Models
 		public List<CartItem> items { get; set; }
 		public void AddToCart(Game game)
 		{
-			var cartItem = _db.cartItems.SingleOrDefault(
-						 item => item.game.Id == game.Id && item.ShoppingCartId == ShoppingCartId);
+			var cartItem = _db.cartItems.SingleOrDefault(item => item.game.GameId == game.GameId && item.ShoppingCartId == ShoppingCartId);
 
 			// Create a new cart item if no cart item exists
 			if (cartItem == null)
 			{
-				cartItem = new CartItem();
-				cartItem.GameId = game.Id;
-				cartItem.ShoppingCartId = ShoppingCartId;
+				cartItem = new CartItem
+				{
+					Ammount = 1,
+					GameId = game.GameId,
+					ShoppingCartId = ShoppingCartId
+				};
 
 				_db.cartItems.Add(cartItem);
 			}
 			else
 			{
-
 				cartItem.Ammount++;
-
-
 			}
 			// Save changes
 			_db.SaveChanges();

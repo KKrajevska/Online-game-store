@@ -27,11 +27,10 @@ namespace Online_game_store.Controllers
 			return View(shoppingCartViewModel);
 		}
 
-		// GET: /Store/AddToCart/5
 		public ActionResult AddToShoppingCart(int id)
 		{
 			// Retrieve the game from the database
-			var selectedGame = db.Games.Single(g => g.Id == id);
+			var selectedGame = db.Games.Single(g => g.GameId == id);
 			// Add it to the shopping cart
 			var cart = ShoppingCart.GetCart(this.HttpContext);
 
