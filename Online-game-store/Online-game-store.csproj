@@ -172,6 +172,7 @@
     <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\ShoppingCartsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -208,6 +209,10 @@
     <Compile Include="Migrations\201907302241172_remove shopping cart.Designer.cs">
       <DependentUpon>201907302241172_remove shopping cart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908021628352_Paymentmodel added.cs" />
+    <Compile Include="Migrations\201908021628352_Paymentmodel added.Designer.cs">
+      <DependentUpon>201908021628352_Paymentmodel added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddToRoleModel.cs" />
@@ -216,6 +221,7 @@
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -294,6 +300,15 @@
     <Content Include="Views\ShoppingCarts\Details.cshtml" />
     <Content Include="Views\ShoppingCarts\Edit.cshtml" />
     <Content Include="Views\ShoppingCarts\Index.cshtml" />
+    <Content Include="Views\Account\AddUserToRole.cshtml" />
+    <Content Include="Views\Payments\Create.cshtml" />
+    <Content Include="Views\Payments\Delete.cshtml" />
+    <Content Include="Views\Payments\Details.cshtml" />
+    <Content Include="Views\Payments\Edit.cshtml" />
+    <Content Include="Views\Payments\Index.cshtml" />
+    <Content Include="Views\Payments\Failed.cshtml" />
+    <Content Include="Views\Payments\Successeded.cshtml" />
+    <Content Include="Views\Payments\Payment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -335,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907302241172_remove shopping cart.resx">
       <DependentUpon>201907302241172_remove shopping cart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908021628352_Paymentmodel added.resx">
+      <DependentUpon>201908021628352_Paymentmodel added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

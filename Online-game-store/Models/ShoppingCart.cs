@@ -46,6 +46,12 @@ namespace Online_game_store.Models
 					context.Session[SessionKey] =
 						context.User.Identity.Name;
 				}
+				else
+				{
+					Guid temp= Guid.NewGuid();
+					// Send temporary cart id back to client as a cookie
+					context.Session[SessionKey] = temp.ToString();
+				}
 			}
 			return context.Session[SessionKey].ToString();
 		}
@@ -84,6 +90,23 @@ namespace Online_game_store.Models
 
 		}
 
+		public int CountItems()
+		{
+			var items = _db.cartItems.Where(
+				cartItems => cartItems.ShoppingCartId == ShoppingCartId);
+			int count = items.ToList().Count;
+
+			// Return 0 if no entries
+			return count;
+		}
+
+		public decimal SumTotal()
+		{
+			decimal? total = _db.cartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
+				.Select(c => c.game.Price * c.Ammount).DefaultIfEmpty(0).Sum();
+			return total ?? decimal.Zero;
+		}
+
 		// associate cart with username
 		public void AssociateCart(string userName)
 		{
@@ -94,6 +117,17 @@ namespace Online_game_store.Models
 			{
 				item.ShoppingCartId = userName;
 			}
+			_db.SaveChanges();
+		}
+
+		public void ClearCart()
+		{
+			var cartItems = _db
+				.cartItems
+				.Where(cart => cart.ShoppingCartId == ShoppingCartId);
+
+			_db.cartItems.RemoveRange(cartItems);
+
 			_db.SaveChanges();
 		}
 
