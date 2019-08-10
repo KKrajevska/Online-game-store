@@ -73,7 +73,6 @@ namespace Online_game_store.Controllers
 		{
 			// Associate shopping cart items with logged-in user
 			var cart = ShoppingCart.GetCart(this.HttpContext);
-
 			cart.AssociateCart(UserName);
 			Session[ShoppingCart.SessionKey] = UserName;
 		}
@@ -105,6 +104,7 @@ namespace Online_game_store.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+					AssociateShoppingCart(model.Email);
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -182,6 +182,7 @@ namespace Online_game_store.Controllers
 				var result = await UserManager.CreateAsync(user, model.Password);
 				if (result.Succeeded)
 				{
+					AssociateShoppingCart(model.Email);
 
 					// For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
 					// Send an email with this link
@@ -424,7 +425,10 @@ namespace Online_game_store.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+			var cart = ShoppingCart.GetCart(this.HttpContext);
+			cart.ClearCart();
+			cart = new ShoppingCart();
+			return RedirectToAction("Index", "Home");
         }
 
         //

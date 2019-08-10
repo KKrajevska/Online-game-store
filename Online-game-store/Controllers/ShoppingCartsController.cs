@@ -38,6 +38,21 @@ namespace Online_game_store.Controllers
 
 			return RedirectToAction("Index");
 		}
+		[HttpGet, ActionName("RemoveFromCart")]
+		public ActionResult RemoveFromCartGet(int id)
+		{
+			// TODO: get method for remove from cart
+		}
+
+		// doesen't work
+		[HttpPost]
+		public ActionResult RemoveFromCart(int id)
+		{
+			var cart = ShoppingCart.GetCart(this.HttpContext);
+			cart.RemoveFromCart(id);
+			return RedirectToAction("index");
+		}
+
 		/**
 		// GET: ShoppingCarts/Details/5
 		public ActionResult Details(int? id)
@@ -134,7 +149,7 @@ namespace Online_game_store.Controllers
             return RedirectToAction("Index");
         }**/
 
-        protected override void Dispose(bool disposing)
+		protected override void Dispose(bool disposing)
         {
             if (disposing)
             {

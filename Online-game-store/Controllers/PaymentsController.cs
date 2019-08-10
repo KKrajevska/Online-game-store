@@ -14,11 +14,13 @@ namespace Online_game_store.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Payments
-        public ActionResult Index()
+		ShoppingCart shoppingCart = new ShoppingCart();
+
+		// GET: Payments
+		/*public ActionResult Index()
         {
             return View(db.Payments.ToList());
-        }
+        }*/
 
 		public ActionResult Payment()
 		{
@@ -55,7 +57,7 @@ namespace Online_game_store.Controllers
 			return View();
 		}
 
-		// GET: Payments/Details/5
+		/*// GET: Payments/Details/5
 		public ActionResult Details(int? id)
         {
             if (id == null)
@@ -149,7 +151,7 @@ namespace Online_game_store.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+		*/
         protected override void Dispose(bool disposing)
         {
             if (disposing)

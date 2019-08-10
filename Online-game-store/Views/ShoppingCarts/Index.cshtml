@@ -24,7 +24,7 @@
 					<td>@item.game.Name</td>
 					<td>@item.Ammount</td>
 					<td>@((item.Ammount * item.game.Price).ToString("c"))</td>
-
+					<td><a>@Html.ActionLink("Remove", "RemoveFromCart", "ShoppingCarts", new { id = item.CartItemId })</a></td>
 				</tr>
 			}
 		</tbody>
