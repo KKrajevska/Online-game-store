@@ -38,11 +38,11 @@ namespace Online_game_store.Controllers
 
 			return RedirectToAction("Index");
 		}
-		[HttpGet, ActionName("RemoveFromCart")]
-		public ActionResult RemoveFromCartGet(int id)
-		{
+		// [HttpGet, ActionName("RemoveFromCart")]
+		// public ActionResult RemoveFromCartGet(int id)
+		// {
 			// TODO: get method for remove from cart
-		}
+		// }
 
 		// doesen't work
 		[HttpPost]
