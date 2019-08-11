@@ -22,4 +22,5 @@ namespace Online_game_store.Models
 		[Display(Name = "Image")]
 		public string ImageUrl { get; set; }
 	}
+	
 }

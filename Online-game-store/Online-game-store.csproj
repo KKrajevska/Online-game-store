@@ -213,6 +213,10 @@
     <Compile Include="Migrations\201908021628352_Paymentmodel added.Designer.cs">
       <DependentUpon>201908021628352_Paymentmodel added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908111317248_NewMigration.cs" />
+    <Compile Include="Migrations\201908111317248_NewMigration.Designer.cs">
+      <DependentUpon>201908111317248_NewMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddToRoleModel.cs" />
@@ -526,6 +530,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908021628352_Paymentmodel added.resx">
       <DependentUpon>201908021628352_Paymentmodel added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908111317248_NewMigration.resx">
+      <DependentUpon>201908111317248_NewMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

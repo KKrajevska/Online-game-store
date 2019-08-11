@@ -218,3 +218,4 @@ E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online_game_store.Migr
 E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online_game_store.Migrations.new_update.resources
 E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online_game_store.Migrations.removeshoppingcart.resources
 E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online_game_store.Migrations.Paymentmodeladded.resources
+E:\ProektIt\Online-game-store\Online-game-store\obj\Debug\Online_game_store.Migrations.NewMigration.resources
