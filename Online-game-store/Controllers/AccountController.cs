@@ -47,7 +47,7 @@ namespace Online_game_store.Controllers
                 return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
             private set
-            {
+             {
                 _userManager = value;
             }
         }
@@ -63,9 +63,15 @@ namespace Online_game_store.Controllers
 		[HttpPost]
 		public ActionResult AddUserToRole(AddToRoleModel model)
 		{
-			var user = UserManager.FindByEmail(model.Email);
-			UserManager.AddToRole(user.Id, model.Role);
-			return RedirectToAction("Index", "Home");
+            try
+            {
+                var user = UserManager.FindByEmail(model.Email);
+                UserManager.AddToRole(user.Id, model.Role);
+                return RedirectToAction("Index", "Home");
+            }
+            catch (Exception ex) {
+                return HttpNotFound();
+            }
 		}
 
 
@@ -77,9 +83,9 @@ namespace Online_game_store.Controllers
 			Session[ShoppingCart.SessionKey] = UserName;
 		}
 
-		//
-		// GET: /Account/Login
-		[AllowAnonymous]
+        //
+        // GET: /Account/Login
+        [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;

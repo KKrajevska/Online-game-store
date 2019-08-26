@@ -7,12 +7,10 @@ namespace Online_game_store.Migrations
     {
         public override void Up()
         {
-            AlterColumn("dbo.Games", "Genre", c => c.Int(nullable: false));
         }
         
         public override void Down()
         {
-            AlterColumn("dbo.Games", "Genre", c => c.String());
         }
     }
 }

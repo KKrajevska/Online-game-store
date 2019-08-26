@@ -10,16 +10,19 @@ using Online_game_store.Models;
 
 namespace Online_game_store.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class GamesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        [AllowAnonymous]
         // GET: Games
         public ActionResult Index()
         {
             return View(db.Games.ToList());
         }
 
+        [AllowAnonymous]
         // GET: Games/Details/5
         public ActionResult Details(int? id)
         {
@@ -46,7 +49,7 @@ namespace Online_game_store.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,ReleaseDate,Price,Rating,Desctiption,Manufacturer,Size,Genre,ImageUrl")] Game game)
+        public ActionResult Create([Bind(Include = "GameId,Name,ReleaseDate,Price,Rating,Desctiption,Manufacturer,Size,Genre,ImageUrl")] Game game)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +81,7 @@ namespace Online_game_store.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,ReleaseDate,Price,Rating,Desctiption,Manufacturer,Size,Genre,ImageUrl")] Game game)
+        public ActionResult Edit([Bind(Include = "GameId,Name,ReleaseDate,Price,Rating,Desctiption,Manufacturer,Size,Genre,ImageUrl")] Game game)
         {
             if (ModelState.IsValid)
             {

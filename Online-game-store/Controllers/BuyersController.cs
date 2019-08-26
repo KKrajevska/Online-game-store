@@ -10,6 +10,7 @@ using Online_game_store.Models;
 
 namespace Online_game_store.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class BuyersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

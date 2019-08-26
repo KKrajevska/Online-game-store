@@ -10,6 +10,7 @@ using Online_game_store.Models;
 
 namespace Online_game_store.Controllers
 {
+    [Authorize]
     public class PaymentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

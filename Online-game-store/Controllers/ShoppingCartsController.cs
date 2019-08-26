@@ -11,6 +11,7 @@ using Online_game_store.ViewModels;
 
 namespace Online_game_store.Controllers
 {
+    [Authorize]
     public class ShoppingCartsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -24,7 +25,7 @@ namespace Online_game_store.Controllers
 			{
 				ShoppingCartItems = cart.GetShoppingCartItems(),
 			};
-			return View(shoppingCartViewModel);
+            return View(shoppingCartViewModel);
 		}
 
 		public ActionResult AddToShoppingCart(int id)
@@ -48,8 +49,8 @@ namespace Online_game_store.Controllers
 		[HttpPost]
 		public ActionResult RemoveFromCart(int id)
 		{
-			var cart = ShoppingCart.GetCart(this.HttpContext);
-			cart.RemoveFromCart(id);
+            var cart = ShoppingCart.GetCart(this.HttpContext);
+            cart.RemoveFromCart(id);
 			return RedirectToAction("index");
 		}
 
