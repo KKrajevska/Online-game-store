@@ -5,7 +5,34 @@
 	ViewBag.Title = "Index";
 }
 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		// Document.ready -> link up remove event handler
+		$(".RemoveLink").click(function () {
+			// Get the id from the link
+			var recordToDelete = $(this).attr("data-id");
+			if (recordToDelete != '') {
+				// Perform the ajax post
+				$.post("/ShoppingCarts/RemoveFromCart", { "id": recordToDelete },
+					function (data) {
+						// Successful requests get here
+						// Update the page elements
+						if (data.ItemCount == 0) {
+							$('#row-' + data.DeleteId).fadeOut('slow');
+						} else {
+							$('#item-count-' + data.DeleteId).text(data.ItemCount);
+						}
+						$('#cart-total').text(data.Total);
+						$('#cart-status').text(data.Count);
+					});
+			}
+		});
+	});
+</script>
+
 <h1>Work in progress</h1>
+
 
 <div>
 	<h2>Your shopping cart</h2>
@@ -20,11 +47,14 @@
 		<tbody>
 			@foreach (var item in Model.ShoppingCartItems)
 			{
-				<tr>
+				<tr id="row-@item.GameId">
 					<td>@item.game.Name</td>
-					<td>@item.Ammount</td>
+					<td id="item-count-@item.GameId">@item.Ammount</td>
 					<td>@((item.Ammount * item.game.Price).ToString("c"))</td>
-					<td><a>@Html.ActionLink("Remove", "RemoveFromCart", "ShoppingCarts", new { id = item.CartItemId })</a></td>
+					<td>
+					<td>
+						<button class="RemoveLink" data-id="@item.GameId">Remove</button>
+					</td>
 				</tr>
 			}
 		</tbody>
@@ -35,3 +65,4 @@
 		</div>
 	</div>
 </div>
+

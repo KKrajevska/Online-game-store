@@ -37,6 +37,35 @@ namespace Online_game_store.Models
 			_db.SaveChanges();
 		}
 
+
+		public int RemoveFromCart(int id)
+		{
+			var shoppingCartItem =
+					_db.cartItems.FirstOrDefault(
+						s => s.game.GameId == id && s.ShoppingCartId == ShoppingCartId);
+
+			var currAmmount = 0;
+
+			if (shoppingCartItem != null)
+			{
+				if (shoppingCartItem.Ammount > 1)
+				{
+					shoppingCartItem.Ammount--;
+					currAmmount = shoppingCartItem.Ammount;
+				}
+				else
+				{
+					_db.cartItems.Remove(shoppingCartItem);
+				}
+
+				_db.SaveChanges();
+			}
+
+			return currAmmount;
+
+		}
+
+
 		public string GetCartId(HttpContextBase context)
 		{
 			if (context.Session[SessionKey] == null)
@@ -131,32 +160,7 @@ namespace Online_game_store.Models
 			_db.SaveChanges();
 		}
 
-		public int RemoveFromCart(int id)
-		{
-			var shoppingCartItem =
-					_db.cartItems.FirstOrDefault(
-						s => s.game.GameId == id && s.ShoppingCartId == ShoppingCartId);
 
-
-			var ammount = 0;
-			if (shoppingCartItem != null)
-			{
-				if (shoppingCartItem.Ammount > 1)
-				{
-					shoppingCartItem.Ammount--;
-					ammount = shoppingCartItem.Ammount;
-				}
-				else
-				{
-					_db.cartItems.Remove(shoppingCartItem);
-				}
-
-				_db.SaveChanges();
-			}
-
-			return ammount;
-
-		}
 
 	}
 }

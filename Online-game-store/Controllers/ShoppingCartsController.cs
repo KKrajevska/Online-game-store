@@ -39,21 +39,25 @@ namespace Online_game_store.Controllers
 
 			return RedirectToAction("Index");
 		}
-		// [HttpGet, ActionName("RemoveFromCart")]
-		// public ActionResult RemoveFromCartGet(int id)
-		// {
-			// TODO: get method for remove from cart
-		// }
-
-		// doesen't work
 		[HttpPost]
 		public ActionResult RemoveFromCart(int id)
 		{
-            var cart = ShoppingCart.GetCart(this.HttpContext);
-            cart.RemoveFromCart(id);
-			return RedirectToAction("index");
-		}
+			// Remove the item from the cart
+			var cart = ShoppingCart.GetCart(this.HttpContext);
 
+			// Remove from cart
+			int itemCount = cart.RemoveFromCart(id);
+
+			// Display the confirmation message
+			var results = new RemoveViewModel
+			{
+				Total = cart.SumTotal(),
+				Count = cart.CountItems(),
+				ItemCount = itemCount,
+				DeleteId = id
+			};
+			return Json(results);
+		}
 		/**
 		// GET: ShoppingCarts/Details/5
 		public ActionResult Details(int? id)

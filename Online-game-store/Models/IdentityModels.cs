@@ -26,6 +26,7 @@ namespace Online_game_store.Models
 		public DbSet<Game> Games { get; set; }
 		public DbSet<Buyer> Buyers { get; set; }
 		public DbSet<CartItem> cartItems { get; set; }
+		
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
