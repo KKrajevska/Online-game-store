@@ -11,7 +11,7 @@ using Online_game_store.ViewModels;
 
 namespace Online_game_store.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     public class ShoppingCartsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

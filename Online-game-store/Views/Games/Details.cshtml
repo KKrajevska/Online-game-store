@@ -85,6 +85,11 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.GameId }) |
+    @if (User.IsInRole("Admin"))
+    {
+        <span>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.GameId }) |
+        </span>
+    }
     @Html.ActionLink("Back to List", "Index")
 </p>
