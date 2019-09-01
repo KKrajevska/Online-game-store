@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-fixed-top bg-success main-menu" >
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,14 +17,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand main-menu" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Games", "Index", "Games")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "main-menu" })</li>
+                    <li>@Html.ActionLink("Games", "Index", "Games", null, new { @class = "main-menu" })</li>
+                    <li>@Html.ActionLink("About", "About", "Home", null, new { @class = "main-menu" })</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "main-menu" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -42,4 +42,13 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
+
 </html>
+
+<style>
+	.main-menu {
+		font-family: "Open Sans", sans-serif;
+		font-size: 16px;
+		color: dimgray;	
+	}
+</style>

@@ -2,30 +2,251 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div id="myCarousel" class="carousel fade-carousel slide" data-ride="carousel">
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>
+
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner">
+		<div class="item active">
+			<img src="~/Content/images/gtavicecity.jpeg" alt="Los Angeles">
+			<div class="hero">
+			<div class="carousel-caption">
+				<h1 style="color:aliceblue">All the games in one place</h1>
+				@Html.ActionLink("View More", "Index", "Games", null, new { @class="btn btn-success outline viewMore"})
+			</div>
+				</div>
+		</div>
+
+		<div class="item">
+			<img src="~/Content/images/fifa19.jpg" alt="Chicago">
+			<div class="hero">
+				<div class="carousel-caption">
+					<h1 style="color:aliceblue">All the games in one place</h1>
+					@Html.ActionLink("View More", "Index", "Games", null, new { @class = "btn btn-success outline viewMore" })
+				</div>
+			</div>
+		</div>
+
+		<div class="item">
+			<img src="~/Content/images/csgo.jpg" alt="New York">
+			<div class="hero">
+				<div class="carousel-caption">
+					<h1 style="color:aliceblue">All the games in one place</h1>
+					@Html.ActionLink("View More", "Index", "Games", null, new { @class = "btn btn-success outline viewMore" })
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Left and right controls -->
+	<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#myCarousel" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>
+<br />
+<hr />
+<br />
+<div class="row">
+	<div class="col-sm-4">
+		<div class="card card-default">
+			<div class="card-header"></div>
+			<div class="card-img">
+				<img src="~/Content/images/gtavicecity.jpeg" class="img-responsive">
+			</div>
+			<div class="card-body">
+				<h4>GTA: Vice City</h4>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+				@Html.ActionLink("View More", "Index", "Games", null, new { @class = "btn btn-success outline viewMore" })
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div class="card card-default">
+			<div class="card-header"></div>
+			<div class="card-img">
+				<img src="~/Content/images/fifa19.jpg" class="img-responsive">
+			</div>
+			<div class="card-body">
+				<h4>FIFA 19</h4>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+				@Html.ActionLink("View More", "Index", "Games", null, new { @class = "btn btn-success outline viewMore" })
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div class="card card-default">
+			<div class="card-header"></div>
+			<div class="card-img">
+				<img src="~/Content/images/csgo.jpg" class="img-responsive">
+			</div>
+			<div class="card-body">
+				<h4>CS: GO</h4>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+				@Html.ActionLink("View More", "Index", "Games", null, new { @class = "btn btn-success outline viewMore" })
+			</div>
+		</div>
+	</div>
+</div>
+<br />
+<hr />
+<br />
+<div id="services">
+	<div class="container">
+		<h1 class="display-5 text-center text-white">Why choose our store</h1>
+		<div class="row">
+			<div class="col-md-2 col-md-offset-5">
+				<hr />
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-lg-3 col-md-6 text-center">
+				<span>
+					<i class="glyphicon glyphicon-cloud" style="color:seagreen; font-size:50px;"></i>
+				</span>
+				<h4 class="text-white">Service Name</h4>
+				<p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+			</div>
+			<div class="col-lg-3 col-md-6 text-center">
+				<span >
+					<i class="glyphicon glyphicon-flash" style="color:seagreen; font-size:50px;"></i>
+				</span>
+				<h4 class="text-white">Service Name</h4>
+				<p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+			</div>
+			<div class="col-lg-3 col-md-6 text-center">
+				<span>
+				
+					<i class="glyphicon glyphicon-phone" style="color:seagreen; font-size:50px;"></i>
+				</span>
+				<h4 class="text-white">Service Name</h4>
+				<p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+			</div>
+			<div class="col-lg-3 col-md-6 text-center">
+				<span >
+					<i class="glyphicon glyphicon-user"style="color:seagreen; font-size:50px;"></i>
+				</span>
+				<h4 class="text-white">Service Name</h4>
+				<p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+			</div>
+		</div>
+	</div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+
+<style>
+	#services {
+		height: 500px;
+		width: 100%;
+		padding-top: 70px;
+	}
+	.card {
+		background-color: #fff;
+		border: 1px solid transparent;
+		border-radius: 6px;
+	}
+	.card-default {
+		border-color: #ddd;
+		background-color: #fff;
+		margin-bottom: 24px;
+	}
+
+	.card-default > .card-header,
+	.card-default > .card-footer {
+		color: #333;
+		background-color: #ddd;
+	}
+
+	.card-default > .card-header {
+		border-bottom: 1px solid #ddd;
+		padding: 8px;
+	}
+
+	.card-default > .card-footer {
+		border-top: 1px solid #ddd;
+		padding: 8px;
+	}
+
+	.card-default > .card-body {
+	}
+
+	.card-default > .card-img:first-child img {
+		border-radius: 6px 6px 0 0;
+	}
+
+	.card-default > .card-left {
+		padding-right: 4px;
+	}
+
+	.card-default > .card-right {
+		padding-left: 4px;
+	}
+
+	.card-default p:last-child {
+		margin-bottom: 0;
+	}
+	.card-default .card-caption {
+		color: #fff;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.outline {
+		background-color: transparent;
+		color: inherit;
+		transition: all .25s;
+	}
+
+	.btn-success.outline {
+		color: #5cb85c;
+	}
+
+	.btn-success.outline:hover {
+		color: #fff;
+	}
+
+	.viewMore{
+		width:150px;
+		height:40px;
+		margin:10px;
+		font-size:16px;
+		text-align:center;
+		padding:10px;
+
+	}
+	.hero h1 {
+		font-size: 3em;
+		margin: 10px;
+		padding: 10px;
+	}
+
+	.fade-carousel .carousel-inner .item .hero {
+		opacity: 0;
+		-webkit-transition: 2s all ease-in-out .1s;
+		-moz-transition: 2s all ease-in-out .1s;
+		-ms-transition: 2s all ease-in-out .1s;
+		-o-transition: 2s all ease-in-out .1s;
+		transition: 2s all ease-in-out .1s;
+	}
+
+	.fade-carousel .carousel-inner .item.active .hero {
+		opacity: 1;
+		-webkit-transition: 2s all ease-in-out .1s;
+		-moz-transition: 2s all ease-in-out .1s;
+		-ms-transition: 2s all ease-in-out .1s;
+		-o-transition: 2s all ease-in-out .1s;
+		transition: 2s all ease-in-out .1s;
+	}
+
+</style>
