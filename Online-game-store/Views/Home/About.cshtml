@@ -1,7 +1,156 @@
 ﻿@{
-    ViewBag.Title = "About";
+	ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h1 class="text-center text-success" >ABOUT US</h1>
+<section id="about" >
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 about-img img-responsive">
+				<img src="~/Content/images/joystick.png" alt="">
+			</div>
 
-<p>Use this area to provide additional information.</p>
+			<div class="col-lg-6 content">
+				<h2>What is our story</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,</p>
+				<ul>
+					<li><i class="glyphicon glyphicon-check"></i> We provide exellence. </li>
+					<li><i class="glyphicon glyphicon-check"></i> We provide the best care for our customers. </li>
+					<li><i class="glyphicon glyphicon-check"></i> At our store you can find the newest games, or games from your childhood.</li>
+				</ul>
+
+			</div>
+		</div>
+
+	</div>
+</section>
+<br />
+<hr />
+<br />
+
+<section id="about">
+	<div class="container">
+		<div class="row about-cols">
+			<div class="col-md-4">
+				<div class="about-col">
+
+					<h2 class=" text-success">Our Mission</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+					<br />
+					<br />
+					<div class="img">
+						<div class="icon"><i class="glyphicon glyphicon-globe"></i></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="about-col">
+					<h2 class="text-success">Our Plan</h2>
+					<p>
+						Sed ut perspiciatis unde omnis iste natus error sit voluptatem  doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+					</p>
+					<br />
+					<br />
+					<div class="img">
+						<div class="icon"><i class="glyphicon glyphicon-list"></i></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4" >
+				<div class="about-col">
+					
+					<h2 class="text-success">Our Vision</h2>
+					<p>
+						Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+					</p>
+					<br />
+					<br />
+					<div class="img">
+						<div class="icon"><i class="glyphicon glyphicon-eye-open"></i></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+<style>
+	.about-col .icon {
+		width: 64px;
+		height: 64px;
+		padding-top: 15px;
+		text-align: center;
+		position: absolute;
+		background-color: #18d26e;
+		border-radius: 50%;
+		text-align: center;
+		border: 4px solid #fff;
+		left: calc( 50% - 32px);
+		bottom: -30px;
+		transition: 0.3s;
+		color:white;
+		font-size:20px;
+
+	}
+
+	.about-col:hover .icon {
+		background-color: #fff;
+	}
+
+	.about-col {
+		background: #fff;
+		border-radius: 0 0 4px 4px;
+		box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+		margin-bottom: 20px;
+	}
+	#about {
+		padding: 60px 0 30px 0;
+		
+	}
+	#about .about-img {
+		overflow: hidden;
+	}
+	#about .about-img img {
+			margin-left: -15px;
+			max-width: 100%;
+		}
+
+	#about .content h2 {
+		color: seagreen;
+		font-weight: 700;
+		font-size: 36px;
+		font-family: "Open Sans", sans-serif;
+	}
+
+	about .content p {
+		line-height: 26px;
+	}
+
+	#about .content p:last-child {
+		margin-bottom: 0;
+	}
+
+	#about .content i {
+		font-size: 20px;
+		padding-right: 4px;
+		color: seagreen;
+	}
+
+	#about .content ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	#about .content ul li {
+		padding-bottom: 10px;
+	}
+
+	#about .content {
+		margin-top: 50px;
+	}
+</style>
