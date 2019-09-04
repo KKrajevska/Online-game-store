@@ -31,38 +31,120 @@
 	});
 </script>
 
-<h1>Work in progress</h1>
-
-
 <div>
-	<h2>Your shopping cart</h2>
-	<table>
+	<h2 class="text-center text-success" style="margin-bottom:30px;">Your shopping cart</h2>
+	<table id="cart" class="table table-hover table-condensed">
 		<thead>
 			<tr>
-				<th>Game</th>
-				<th>Pieces</th>
-				<th>Price</th>
+				<th style="width:50%">Game</th>
+				<th style="width:10%">Price</th>
+				<th style="width:8%">Pieces</th>
+				<th style="width:22%" class="text-center">Subtotal</th>
+				<th style="width:10%"></th>
 			</tr>
 		</thead>
 		<tbody>
 			@foreach (var item in Model.ShoppingCartItems)
 			{
 				<tr id="row-@item.GameId">
-					<td>@item.game.Name</td>
-					<td id="item-count-@item.GameId">@item.Ammount</td>
-					<td>@((item.Ammount * item.game.Price).ToString("c"))</td>
+					<td data-th="Product">
+						<div class="row">
+							<div class="col-sm-2 hidden-xs">
+								<img src="@item.game.ImageUrl" alt="..." class="img-responsive" />
+							</div>
+							<div class="col-sm-10">
+								<h4 class="nomargin">@item.game.Name</h4>
+								<p>@item.game.Desctiption</p>
+							</div>
+						</div>
+					</td>
+					<td data-th="Price">@item.game.Price $</td>
+					<td data-th="Pieces" id="item-count-@item.GameId">@item.Ammount</td>
+					<td data-th="Subtotal" class="text-center">@((item.Ammount * item.game.Price).ToString("c"))</td>
 					<td>
-					<td>
-						<button class="RemoveLink" data-id="@item.GameId">Remove</button>
+					<td class="actions"  data-th="">
+						<button class="RemoveLink btn btn-danger outline" data-id="@item.GameId">Remove</button>
 					</td>
 				</tr>
 			}
 		</tbody>
+		<tfoot>
+			<tr>
+				<td>@Html.ActionLink("Go Back", "Index", "Games", null, new { @class = "btn btn-warning outline" })</td>
+				<td colspan="4" class="hidden-xs"></td>
+				<td>@Html.ActionLink("Payment", "Payment", "Payments", null, new { @class = "btn btn-success outline" })</td>
+			</tr>
+		</tfoot>
 	</table>
-	<div>
-		<div>
-			<a>@Html.ActionLink("Payment", "Payment", "Payments", null, new { @class = "btn btn-success" })</a>
-		</div>
-	</div>
 </div>
 
+<style>
+
+	.outline {
+		background-color: transparent;
+		color: inherit;
+		transition: all .25s;
+	}
+
+	.btn-success.outline {
+		color: #5cb85c;
+	}
+
+	.btn-success.outline:hover {
+			color: #fff;
+	}
+
+	.btn-danger.outline {
+		color: red;
+	}
+
+	.btn-danger.outline:hover {
+		color: #fff;
+	}
+
+	.btn-warning.outline {
+		color: orange;
+	}
+
+	.btn-warning.outline:hover {
+		color: #fff;
+	}
+
+
+@@media screen and (max-width: 600px){
+	table#cart thead {
+		display: none;
+	}
+
+	table#cart tbody td {
+		display: block;
+		padding: .6rem;
+		min-width: 320px;
+	}
+
+	table#cart tbody tr td:first-child {
+		background: #333;
+		color: #fff;
+	}
+
+	table#cart tbody td:before {
+		content: attr(data-th);
+		font-weight: bold;
+		display: inline-block;
+		width: 8rem;
+	}
+
+
+	table#cart tfoot td {
+		display: block;
+	}
+
+		table#cart tfoot td .btn {
+			display: block;
+		}
+	}
+
+	.table > tbody > tr > td, .table > tfoot > tr > td {
+		vertical-align: middle;
+	}
+</style>
