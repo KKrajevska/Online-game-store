@@ -1,7 +1,32 @@
 ﻿
 @{
-    ViewBag.Title = "Successeded";
+	ViewBag.Title = "Successeded";
 }
 
-<h2>Your order has been placed. Thank you!</h2>
+<div id="box">
+	<h2 class="text-center text-success">Your order has been placed. Thank you!</h2>
+	@Html.ActionLink("Go Back", "Index", "Games", null, new { @class = "btn btn-warning outline" })
+</div>
 
+<style>
+	#box {
+		border-radius: 0 0 4px 4px;
+		box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+		padding: 50px;
+		margin-top: 30px;
+	}
+
+	.btn-warning.outline {
+		color: orange;
+	}
+
+		.btn-warning.outline:hover {
+			color: #fff;
+		}
+
+	.outline {
+		background-color: transparent;
+		color: inherit;
+		transition: all .25s;
+	}
+</style>	
