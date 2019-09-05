@@ -16,7 +16,7 @@
 			<img src="~/Content/images/gtavicecity.jpeg" alt="Los Angeles">
 			<div class="hero">
 			<div class="carousel-caption">
-				<h1 style="color:aliceblue">All the games in one place</h1>
+                <h1 style="color: aliceblue">All the games in one place</h1>
 				@Html.ActionLink("View More", "Index", "Games", null, new { @class="btn btn-success outline viewMore"})
 			</div>
 				</div>
@@ -57,45 +57,54 @@
 <hr />
 <br />
 <div class="row">
-	<div class="col-sm-4">
-		<div class="card card-default">
-			<div class="card-header"></div>
-			<div class="card-img">
-				<img src="~/Content/images/gtavicecity.jpeg" class="img-responsive">
-			</div>
-			<div class="card-body">
-				<h4>GTA: Vice City</h4>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-				@Html.ActionLink("View More", "Index", "Games", null, new { @class = "btn btn-success outline viewMore" })
-			</div>
-		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="card card-default">
-			<div class="card-header"></div>
-			<div class="card-img">
-				<img src="~/Content/images/fifa19.jpg" class="img-responsive">
-			</div>
-			<div class="card-body">
-				<h4>FIFA 19</h4>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-				@Html.ActionLink("View More", "Index", "Games", null, new { @class = "btn btn-success outline viewMore" })
-			</div>
-		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="card card-default">
-			<div class="card-header"></div>
-			<div class="card-img">
-				<img src="~/Content/images/csgo.jpg" class="img-responsive">
-			</div>
-			<div class="card-body">
-				<h4>CS: GO</h4>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-				@Html.ActionLink("View More", "Index", "Games", null, new { @class = "btn btn-success outline viewMore" })
-			</div>
-		</div>
-	</div>
+    <div>
+        <h1 class="display-5 text-center text-white">Stop and buy a game at Gamers Stop</h1>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-5">
+                <hr />
+            </div>
+        </div>
+        <br />
+        <div class="col-sm-4">
+            <div class="card card-default">
+                <div class="card-header"></div>
+                <div class="card-img">
+                    <img src="~/Content/images/gtavicecity.jpeg" class="img-responsive">
+                </div>
+                <div class="card-body">
+                    <h4>GTA: Vice City</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                    @Html.ActionLink("View More", "Index", "Games", null, new { @class = "btn btn-success outline viewMore" })
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card card-default">
+                <div class="card-header"></div>
+                <div class="card-img">
+                    <img src="~/Content/images/fifa19.jpg" class="img-responsive">
+                </div>
+                <div class="card-body">
+                    <h4>FIFA 19</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                    @Html.ActionLink("View More", "Index", "Games", null, new { @class = "btn btn-success outline viewMore" })
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card card-default">
+                <div class="card-header"></div>
+                <div class="card-img">
+                    <img src="~/Content/images/csgo.jpg" class="img-responsive">
+                </div>
+                <div class="card-body">
+                    <h4>CS: GO</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                    @Html.ActionLink("View More", "Index", "Games", null, new { @class = "btn btn-success outline viewMore" })
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <br />
 <hr />

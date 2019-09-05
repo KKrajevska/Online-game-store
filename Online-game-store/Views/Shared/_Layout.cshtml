@@ -17,11 +17,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand main-menu" })
+                @Html.ActionLink("GAMERS STOP", "Index", "Home", new { area = "" }, new { @class = "navbar-brand main-menu" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "main-menu" })</li>
                     <li>@Html.ActionLink("Games", "Index", "Games", null, new { @class = "main-menu" })</li>
                     <li>@Html.ActionLink("About", "About", "Home", null, new { @class = "main-menu" })</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "main-menu" })</li>
@@ -83,4 +82,8 @@
 		font-size: 16px;
 		color: dimgray;	
 	}
+    .navbar-brand {
+        color: black;
+        font-weight: bold;
+    }
 </style>
