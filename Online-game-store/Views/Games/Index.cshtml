@@ -11,9 +11,9 @@
 <div style="text-align: end">
     @if (User.IsInRole("Admin"))
     {
-    <a href="@Url.Action("Create")" class="btn btn-success buttonStyle">
-        <i class="glyphicon glyphicon-plus"></i>
-    </a>
+        <a href="@Url.Action("Create")" class="btn btn-success outline fab" data-toggle="tooltip" title="Add new game">
+            <i class="glyphicon glyphicon-plus"></i>
+        </a>
     }
 </div>
 <br />
@@ -52,7 +52,7 @@
                     <img src="@item.ImageUrl" style="width:300px" />
                 </td>
                 <td>
-                    @Html.ActionLink(item.Name, "Details", new { id = item.GameId }, new { @class = "linkStyle" })
+                    @Html.ActionLink(item.Name, "Details", new { id = item.GameId }, new { @class = "text-success" })
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Manufacturer)
@@ -73,17 +73,17 @@
                 @if (User.IsInRole("Admin"))
                 {
                     <td>
-                        <a href="@Url.Action("AddToShoppingCart", "ShoppingCarts", new { id=item.GameId})" class="btn btn-success">
+                        <a href="@Url.Action("AddToShoppingCart", "ShoppingCarts", new { id=item.GameId})" class="btn btn-success outline viewMore">
                             <i class="glyphicon glyphicon-shopping-cart"></i>
                         </a>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.GameId }, new { @class = "btn btn-success" })
-                        @Html.ActionLink("Delete", "Delete", new { id = item.GameId }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.GameId }, new { @class = "btn btn-success outline viewMore" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.GameId }, new { @class = "btn btn-success outline viewMore" })
                     </td>
                 }
                 else
                 {
                     <td>
-                        <a href="@Url.Action("AddToShoppingCart", "ShoppingCarts", new { id=item.GameId})" class="btn btn-success">
+                        <a href="@Url.Action("AddToShoppingCart", "ShoppingCarts", new { id=item.GameId})" class="btn btn-success outline viewMore">
                             <i class="glyphicon glyphicon-shopping-cart"></i>
                         </a>
                     </td>
@@ -105,17 +105,44 @@
 }
 
 <style>
-    .linkStyle {
-        color: green;
-        text-decoration: none;
-    }
 
-    .linkStyle:hover {
-        color: green;
-    }
-
-    .buttonStyle {
+    .fab {
         border-radius: 100%;
+    }
+
+    .outline {
+        background-color: transparent;
+        color: inherit;
+        transition: all .25s;
+    }
+
+    .btn-success.outline {
+        color: #5cb85c;
+    }
+
+    .btn-success.outline:hover {
+        color: #fff;
+    }
+
+    .viewMore {
+        height: 40px;
+        margin: 5px;
+        font-size: 16px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+        background-color: #5cb85c;
+        border-color: #5cb85c;
+    }
+
+    .pagination > li > a, .pagination > li > span {
+        color: #5cb85c;
+    }
+
+    a {
+        color: #5cb85c;
     }
 
 </style>
