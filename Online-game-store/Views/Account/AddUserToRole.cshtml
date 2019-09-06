@@ -3,17 +3,50 @@
 	ViewBag.Title = "AddUserToRole";
 }
 
-<h2>Add User To Role</h2>
 
-@using (Html.BeginForm("AddUserToRole", "Account"))
-{
-	<div class="form-group">
-		@Html.LabelFor(m => m.Email)
-		@Html.TextBoxFor(m => m.Email)
-	</div>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<section id="box">
+			<h2 class="text-center text-success">Add User To Role</h2>
 
-	<div class="form-group">
-		@Html.DropDownListFor(m => m.Role, new SelectList(Model.roles), new { @class = "form-control" })
-	</div>
-	<button type="submit">Save</button>
-}
+			@using (Html.BeginForm("AddUserToRole", "Account"))
+			{
+				<div class="form-group">
+					@Html.LabelFor(m => m.Email)
+					@Html.TextBoxFor(m => m.Email)
+				</div>
+
+				<div class="form-group">
+					@Html.DropDownListFor(m => m.Role, new SelectList(Model.roles), new { @class = "form-control" })
+				</div>
+				<button type="submit" class="btn btn-success outline">Save</button>
+			}
+		</section>
+</div>
+</div>
+
+<style>
+	#box {
+		border-radius: 0 0 4px 4px;
+		box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+		padding: 50px;
+		margin-top: 30px;
+	}
+
+	.outline {
+		background-color: transparent;
+		color: inherit;
+		transition: all .25s;
+		float: left;
+		margin-right: 30px;
+	}
+
+	.btn-success.outline {
+		color: #5cb85c;
+	}
+
+		.btn-success.outline:hover {
+			color: #fff;
+		}
+
+</style>
