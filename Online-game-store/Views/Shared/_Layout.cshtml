@@ -18,7 +18,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("GAMERS STOP", "Index", "Home", new { area = "" }, new { @class = "navbar-brand main-menu" })
+                <strong>
+                    <a href="@Url.Action("Index", "Home", new { area = "" })" class="navbar-brand main-menu">
+                        <img src="~/logo.png" class="navbar-brand-img"/>
+                    </a>
+                </strong>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -83,8 +87,11 @@
 		font-size: 16px;
 		color: dimgray;	
 	}
+
     .navbar-brand {
-        color: black;
-        font-weight: bold;
+        padding: 10px 15px;
+    }
+
+    .navbar-brand-img {
     }
 </style>

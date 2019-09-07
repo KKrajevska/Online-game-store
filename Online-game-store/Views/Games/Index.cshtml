@@ -76,7 +76,7 @@
                         <a href="@Url.Action("AddToShoppingCart", "ShoppingCarts", new { id=item.GameId})" class="btn btn-success outline viewMore">
                             <i class="glyphicon glyphicon-shopping-cart"></i>
                         </a>
-                        <a>@Html.ActionLink("Edit", "Edit", new { id = item.GameId }, new { @class = "btn btn-success outline viewMore" })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.GameId }, new { @class = "btn btn-success outline viewMore" })
                         @Html.ActionLink("Delete", "Delete", new { id = item.GameId }, new { @class = "btn btn-danger outline viewMore " })
                     </td>
                 }
