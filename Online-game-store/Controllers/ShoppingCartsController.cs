@@ -24,6 +24,7 @@ namespace Online_game_store.Controllers
 			var shoppingCartViewModel = new ShoppingCartViewModel
 			{
 				ShoppingCartItems = cart.GetShoppingCartItems(),
+				CartTotal = cart.SumTotal()
 			};
             return View(shoppingCartViewModel);
 		}

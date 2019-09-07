@@ -70,9 +70,16 @@
 			}
 		</tbody>
 		<tfoot>
+			<tr class="visible-xs">
+				<td class="text-center"><strong>Total @Model.CartTotal.ToString("c")</strong></td>
+			</tr>
 			<tr>
 				<td>@Html.ActionLink("Go Back", "Index", "Games", null, new { @class = "btn btn-warning outline" })</td>
-				<td colspan="4" class="hidden-xs"></td>
+				<td colspan="2" class="hidden-xs"></td>
+				<td class="hidden-xs text-center">
+					Total @Model.CartTotal.ToString("c")
+				</td>
+				<td colspan="1" class="hidden-xs"></td>
 				<td>@Html.ActionLink("Payment", "Payment", "Payments", null, new { @class = "btn btn-success outline" })</td>
 			</tr>
 		</tfoot>

@@ -9,5 +9,6 @@ namespace Online_game_store.ViewModels
 	public class ShoppingCartViewModel
 	{
 		public List<CartItem> ShoppingCartItems { get; set; }
+		public decimal CartTotal { get; set; }
 	}
 }

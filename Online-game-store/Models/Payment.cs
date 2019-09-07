@@ -13,7 +13,7 @@ namespace Online_game_store.Models
 
 		[Required(ErrorMessage = "Please enter your address")]
 		[StringLength(100)]
-		[Display(Name = "Address Line 1")]
+		[Display(Name = "Address Line")]
 		public string Address{ get; set; }
 
 		[Required(ErrorMessage = "Please enter your zip code")]
