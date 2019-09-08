@@ -4,92 +4,69 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Game</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ReleaseDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ReleaseDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rating)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rating)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Desctiption)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Desctiption)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Manufacturer)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Manufacturer)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Size)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Size)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Genre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Genre)
-        </dd>
-
-        <dt>
-			<img src="@Model.ImageUrl" style="max-width:200px" />
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImageUrl)
-        </dd>
-
-    </dl>
+<div class="container">
+    <div class="row">
+        <h2 class="text-center text-success">@Html.DisplayFor(model => model.Name)</h2>
+        <hr />
+    </div>
+    <div id="details">
+        <div class="row">
+            <div class="col-lg-6">
+                <img class="img-responsive" src="@Html.DisplayFor(model => model.ImageUrl)" alt="">
+            </div>
+            <div class="col-lg-6 content">
+                <p>@Html.DisplayFor(model => model.Desctiption)</p>
+                <p><strong>@Html.DisplayNameFor(model => model.Manufacturer):</strong> @Html.DisplayFor(model => model.Manufacturer)</p>
+                <p><strong>@Html.DisplayNameFor(model => model.Genre):</strong> @Html.DisplayFor(model => model.Genre)</p>
+                <p><strong>@Html.DisplayNameFor(model => model.ReleaseDate):</strong> @Html.DisplayFor(model => model.ReleaseDate)</p>
+                <p><strong>@Html.DisplayNameFor(model => model.Size):</strong> @Html.DisplayFor(model => model.Size)</p>
+                <p><strong>@Html.DisplayNameFor(model => model.Rating):</strong> @Html.DisplayFor(model => model.Rating)</p>
+                <p><strong>@Html.DisplayNameFor(model => model.Price):</strong> &euro; @Html.DisplayFor(model => model.Price)</p>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-6">@Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning outline" })</div>
+        <div class="col-lg-6">
+            <a href="@Url.Action("AddToShoppingCart", "ShoppingCarts", new { id=Html.DisplayFor(model => model.GameId)})" class="btn btn-success outline">
+                <i class="glyphicon glyphicon-shopping-cart"></i> Add to shopping cart
+            </a>
+        </div>
+    </div>
+    <br />
 </div>
-<p>
-    @if (User.IsInRole("Admin"))
-    {
-        <span>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.GameId }) |
-        </span>
+
+<style>
+    .outline {
+        background-color: transparent;
+        color: inherit;
+        transition: all .25s;
     }
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+    .btn-warning.outline {
+        color: orange;
+    }
+
+        .btn-warning.outline:hover {
+            color: #fff;
+        }
+
+    .content {
+        line-height: 26px;
+    }
+
+    #details {
+        padding: 60px 0 30px 0;
+    }
+
+    .btn-success.outline {
+        color: #5cb85c;
+    }
+
+        .btn-success.outline:hover {
+            color: #fff;
+        }
+</style>

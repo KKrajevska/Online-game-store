@@ -20,8 +20,7 @@
 <table id="myTable" class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
+            <th class="no-sort">
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
@@ -41,7 +40,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Price)
             </th>
-            <th></th>
+            <th class="no-sort"></th>
         </tr>
     </thead>
     <tbody>
@@ -49,7 +48,7 @@
         {
             <tr>
                 <td>
-                    <img src="@item.ImageUrl" style="width:300px" />
+                    <img class="img-responsive" src="@item.ImageUrl" style="width:300px" />
                 </td>
                 <td>
                     @Html.ActionLink(item.Name, "Details", new { id = item.GameId }, new { @class = "text-success" })
@@ -67,23 +66,23 @@
                     @Html.DisplayFor(modelItem => item.Rating)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Price)
+                    &euro; @Html.DisplayFor(modelItem => item.Price)
                 </td>
 
                 @if (User.IsInRole("Admin"))
                 {
                     <td>
-                        <a href="@Url.Action("AddToShoppingCart", "ShoppingCarts", new { id=item.GameId})" class="btn btn-success outline viewMore">
+                        <a href="@Url.Action("AddToShoppingCart", "ShoppingCarts", new { id=item.GameId})" class="btn btn-success outline btn-block">
                             <i class="glyphicon glyphicon-shopping-cart"></i>
                         </a>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.GameId }, new { @class = "btn btn-success outline viewMore" })
-                        @Html.ActionLink("Delete", "Delete", new { id = item.GameId }, new { @class = "btn btn-danger outline viewMore " })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.GameId }, new { @class = "btn btn-success outline btn-block" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.GameId }, new { @class = "btn btn-danger outline btn-block" })
                     </td>
                 }
                 else
                 {
                     <td>
-                        <a href="@Url.Action("AddToShoppingCart", "ShoppingCarts", new { id=item.GameId})" class="btn btn-success outline viewMore">
+                        <a href="@Url.Action("AddToShoppingCart", "ShoppingCarts", new { id=item.GameId})" class="btn btn-success outline btn-block">
                             <i class="glyphicon glyphicon-shopping-cart"></i>
                         </a>
                     </td>
@@ -114,23 +113,16 @@
         background-color: transparent;
         color: inherit;
         transition: all .25s;
+   
     }
 
     .btn-success.outline {
         color: #5cb85c;
     }
 
-    .btn-success.outline:hover {
-        color: #fff;
-    }
-
-    .viewMore {
-        height: 40px;
-        margin: 5px;
-        font-size: 16px;
-        text-align: center;
-        padding: 10px;
-    }
+        .btn-success.outline:hover {
+            color: #fff;
+        }
 
     .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
         background-color: #5cb85c;
@@ -145,12 +137,23 @@
         color: #5cb85c;
     }
 
-	.btn-danger.outline{
-		color:red;
-	}
+    .btn-danger.outline {
+        color: red;
+    }
 
-	.btn-danger.outline:hover{
-		color: #fff;
-	}
+        .btn-danger.outline:hover {
+            color: #fff;
+        }
 
+    .no-sort::after {
+        display: none !important;
+    }
+
+    .no-sort {
+        pointer-events: none !important;
+        cursor: default !important;
+    }
+    .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+        vertical-align: middle;
+    }
 </style>

@@ -55,13 +55,12 @@
 							</div>
 							<div class="col-sm-10">
 								<h4 class="nomargin">@item.game.Name</h4>
-								<p>@item.game.Desctiption</p>
 							</div>
 						</div>
 					</td>
-					<td data-th="Price">@item.game.Price $</td>
+					<td data-th="Price">&euro; @item.game.Price</td>
 					<td data-th="Pieces" id="item-count-@item.GameId">@item.Ammount</td>
-					<td data-th="Subtotal" class="text-center">@((item.Ammount * item.game.Price).ToString("c"))</td>
+					<td data-th="Subtotal" class="text-center">&euro; @((item.Ammount * item.game.Price).ToString(""))</td>
 					<td>
 					<td class="actions"  data-th="">
 						<button class="RemoveLink btn btn-danger outline" data-id="@item.GameId">Remove</button>
@@ -71,14 +70,14 @@
 		</tbody>
 		<tfoot>
 			<tr class="visible-xs">
-				<td class="text-center"><strong>Total @Model.CartTotal.ToString("c")</strong></td>
+				<td class="text-center"><strong>Total: &euro; @Model.CartTotal.ToString("")</strong></td>
 			</tr>
 			<tr>
 				<td>@Html.ActionLink("Go Back", "Index", "Games", null, new { @class = "btn btn-warning outline" })</td>
 				<td colspan="2" class="hidden-xs"></td>
-				<td class="hidden-xs text-center">
-					Total @Model.CartTotal.ToString("c")
-				</td>
+                <td class="hidden-xs text-center">
+                    Total: &euro; @Model.CartTotal.ToString("")
+                </td>
 				<td colspan="1" class="hidden-xs"></td>
 				<td>@Html.ActionLink("Payment", "Payment", "Payments", null, new { @class = "btn btn-success outline" })</td>
 			</tr>
