@@ -15,8 +15,10 @@ namespace Online_game_store.Models
 		public string ReleaseDate { get; set; }
 		public decimal Price { get; set; }
 		public float Rating { get; set; }
-		public string Desctiption { get; set; }
-		public string Manufacturer { get; set; }
+        [Display(Name = "Description")]
+        public string Desctiption { get; set; }
+        [Display(Name = "Developer(s)")]
+        public string Manufacturer { get; set; }
 		public string Size { get; set; }
 		public string Genre { get; set; }
 		[Display(Name = "Image")]
