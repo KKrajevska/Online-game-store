@@ -84,6 +84,11 @@
 	</dl>
 
 		@Html.ActionLink("Go Back", "Index", "Home", null, new { @class = "btn btn-warning outline" })
+
+		@if (User.IsInRole("Admin"))
+		{
+			@Html.ActionLink("Change Roles", "AddUserToRole", "Account", null, new { @class= "btn btn-warning outline"})
+		}
 </div>
 
 <style>

@@ -34,18 +34,16 @@ namespace Online_game_store.Controllers
 			var cart = ShoppingCart.GetCart(this.HttpContext);
 			var items = cart.GetShoppingCartItems();
 			cart.items = items;
-			if (cart.items == null)
+			if (cart.items.Count == 0)
 			{
 				return RedirectToAction("Failed");
 			}
-
-			if (ModelState.IsValid)
+			else
 			{
 				cart.ClearCart();
 				return RedirectToAction("Successeded");
 			}
 
-			return View(payment);
 		}
 
 		public ActionResult Failed()
